@@ -13,8 +13,11 @@ const ROOM_NAME = "telemedicineAppointment";
 const MAX_ALLOWED_SESSION_DURATION = 14400;
 
 // Routes
-const providerPath = path.join(__dirname, "./public/provider.html");
-app.use("/provider", express.static(providerPath));
+const homePath = path.join(__dirname, "./public/index.html");
+app.use("/", express.static(homePath));
+
+const advocatePath = path.join(__dirname, "./public/advocate.html");
+app.use("/advocate", express.static(advocatePath));
 
 const patientPath = path.join(__dirname, "./public/patient.html");
 app.use("/patient", express.static(patientPath));

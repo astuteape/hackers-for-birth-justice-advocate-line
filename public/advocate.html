@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>MelaninMedical</title>
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@200&display=swap"
+			rel="stylesheet">
+
+		<link rel="stylesheet" href="default.css" />
+		<link rel="stylesheet" href="index.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h3><a href="/">Home page</a></h3>
+			<h1>Welcome Advocate</h1>
+			<h2>A community member is waiting to connect.</h2>
+			<p>
+				The community member will appear in a video window on this page when you connect.
+			</p>
+			<button id="join-button">Connect with this community member</button>
+			<button id="leave-button" class="hidden">Leave Room</button>
+			<div id="local-media-container"></div>
+		</div>
+	</body>
+	<script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
+	<script src="./index.js"></script>
+	<script>
+		const joinButton = document.getElementById("join-button");
+		joinButton.addEventListener("click", async (event) => {
+			await joinRoom(event, "provider");
+		});
+
+		const leaveButton = document.getElementById("leave-button");
+		leaveButton.addEventListener("click", onLeaveButtonClick);
+	</script>
+
+</html>
